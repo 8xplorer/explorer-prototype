@@ -65,10 +65,6 @@ extension ViewController: KolodaViewDataSource {
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         return UIImageView(image: dataSource[Int(index)])
 
-//        let view = UIView(frame: koloda.bounds)
-//        view.backgroundColor = UIColor.gray
-//        return view
-
 //        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)![0] as! UIView
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7038DCEBE2635D852070F0D5 /* Pods_explorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CF620314511A3C126325DB /* Pods_explorer.framework */; };
+		E52DE1972081F2DD0076074A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E52DE1962081F2DD0076074A /* GoogleService-Info.plist */; };
 		E5780D1B2081B99900900158 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5780D1A2081B99900900158 /* AppDelegate.swift */; };
 		E5780D1D2081B99900900158 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5780D1C2081B99900900158 /* ViewController.swift */; };
 		E5780D202081B99900900158 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5780D1E2081B99900900158 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		53B78EEFE15C18EA615B81EC /* Pods-explorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-explorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-explorer/Pods-explorer.release.xcconfig"; sourceTree = "<group>"; };
+		A9CF620314511A3C126325DB /* Pods_explorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_explorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52DE1962081F2DD0076074A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E5780D172081B99900900158 /* explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = explorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5780D1A2081B99900900158 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5780D1C2081B99900900158 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,12 +35,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7038DCEBE2635D852070F0D5 /* Pods_explorer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21AC6156DE54CD083A76F845 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9CF620314511A3C126325DB /* Pods_explorer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		800125BAD7AF683446CBF29F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +65,7 @@
 				E5780D192081B99900900158 /* explorer */,
 				E5780D182081B99900900158 /* Products */,
 				800125BAD7AF683446CBF29F /* Pods */,
+				21AC6156DE54CD083A76F845 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +80,7 @@
 		E5780D192081B99900900158 /* explorer */ = {
 			isa = PBXGroup;
 			children = (
+				E52DE1962081F2DD0076074A /* GoogleService-Info.plist */,
 				E5780D1A2081B99900900158 /* AppDelegate.swift */,
 				E5780D1C2081B99900900158 /* ViewController.swift */,
 				E5780D1E2081B99900900158 /* Main.storyboard */,
@@ -137,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5780D252081B99B00900158 /* LaunchScreen.storyboard in Resources */,
+				E52DE1972081F2DD0076074A /* GoogleService-Info.plist in Resources */,
 				E5780D222081B99B00900158 /* Assets.xcassets in Resources */,
 				E5780D202081B99900900158 /* Main.storyboard in Resources */,
 			);
@@ -152,12 +168,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-explorer/Pods-explorer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,10 +359,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BZCMXXMFS2;
 				INFOPLIST_FILE = explorer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csouls.explorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -358,10 +376,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BZCMXXMFS2;
 				INFOPLIST_FILE = explorer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csouls.explorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
